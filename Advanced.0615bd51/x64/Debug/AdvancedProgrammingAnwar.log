@@ -1,6 +1,3 @@
 ﻿  AdvancedProgrammingAnwar.cpp
-C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\AdvancedProgrammingAnwar.cpp(105,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  Player.cpp
-  Generating Code...
-Player.obj : error LNK2005: "class Player global_player" (?global_player@@3VPlayer@@A) already defined in AdvancedProgrammingAnwar.obj
-C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\x64\Debug\AdvancedProgrammingAnwar.exe : fatal error LNK1169: one or more multiply defined symbols found
+C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\AdvancedProgrammingAnwar.cpp(163,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  AdvancedProgrammingAnwar.vcxproj -> C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\x64\Debug\AdvancedProgrammingAnwar.exe

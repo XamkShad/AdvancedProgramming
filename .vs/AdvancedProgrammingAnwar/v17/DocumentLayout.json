@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\AdvancedProgrammingAnwar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:AdvancedProgrammingAnwar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp",
-              "RelativeDocumentMoniker": "Player.cpp",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp",
-              "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-16T18:24:01.218Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,9 +24,9 @@
               "RelativeDocumentMoniker": "AdvancedProgrammingAnwar.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\AdvancedProgrammingAnwar.cpp",
               "RelativeToolTip": "AdvancedProgrammingAnwar.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-16T18:21:59.945Z",
+              "WhenOpened": "2025-11-16T19:49:03.656Z",
               "EditorCaption": ""
             }
           ]

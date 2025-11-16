@@ -1,7 +1,6 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "Player.cpp"
 
 using namespace std;
 
@@ -15,13 +14,72 @@ int read_input(char*);
 void update_state(char);
 void render_screen(void);
 
+#pragma region Classes
+class Map {
+public:
+
+};
+
+class BaseCharacter {
+protected:
+	int max_health = 100;
+	int damage = 0;
+};
+
+class Player : BaseCharacter {
+public:
+	int max_oxygen = 100;
+	int max_lives = 3;
+
+	int current_health;
+	int current_oxygen;
+	int current_lives;
+
+	int pos_x;
+	int pos_y;
+
+	Player() {
+		reset();
+	}
+
+	~Player() {
+		//game_over();
+	}
+
+	void reset() {
+		current_health = max_health;
+		current_oxygen = max_oxygen;
+		current_lives = max_lives;
+	}
+
+	void move(int delta_x, int delta_y) {
+		pos_x += delta_x;
+		pos_y += delta_y;
+	}
+
+	void game_over() {
+
+	}
+};
+
+// Static, stationary enemy. //
+class EnemySeamine : BaseCharacter {
+public:
+};
+
+// Moving enemy. //
+class EnemyAnglerfish : BaseCharacter {
+public:
+};
+#pragma endregion
+
 char** map = nullptr;
 int mapHeight = 0;
 int mapWidth = 0;
 
-bool selected_map_valid = false;
+Player* player = new Player();
 
-Player global_player;
+bool selected_map_valid = false;
 
 int main(void)
 {
@@ -128,8 +186,8 @@ void load_level(string filepath)
 			// Found the player. Mark it down. If not, abort mission. //
 			if (line[x] == 'P')
 			{
-				global_player.pos_y = y;
-				global_player.pos_x = x;
+				player->pos_y = y;
+				player->pos_x = x;
 
 				selected_map_valid = true;
 			}
@@ -180,15 +238,15 @@ void update_state(char input)
 		break;
 	}
 
-	if (is_valid_coordinate(global_player.pos_y + target_pos_y, global_player.pos_x + target_pos_x))
+	if (is_valid_coordinate(player->pos_y + target_pos_y, player->pos_x + target_pos_x))
 	{
-		map[global_player.pos_y][global_player.pos_x] = 'o';
-		map[global_player.pos_y + target_pos_y][global_player.pos_x + target_pos_x] = 'P';
+		map[player->pos_y][player->pos_x] = 'o';
+		map[player->pos_y + target_pos_y][player->pos_x + target_pos_x] = 'P';
 
-		global_player.pos_y += target_pos_y;
-		global_player.pos_x += target_pos_x;
+		player->pos_y += target_pos_y;
+		player->pos_x += target_pos_x;
 
-		global_player.current_oxygen--;
+		player->current_oxygen--;
 	}
 	// PLAYER INPUT AND COLLISION DETECTION //
 }
@@ -204,9 +262,9 @@ void render_screen(void)
 	cout << "Holy Diver v0.01" << endl; 
 	cout << "Use WASD keys to move. Press 'Q' to quit at all times." << endl << endl;
 
-	cout << "O2 Level: " << global_player.current_oxygen << "%" << endl;
-	cout << "Hull Integrity: " << global_player.current_health << "%" << endl;
-	cout << "Lives: " << global_player.current_lives << endl << endl;
+	cout << "O2 Level: " << player->current_oxygen << "%" << endl;
+	cout << "Hull Integrity: " << player->current_health << "%" << endl;
+	cout << "Lives: " << player->current_lives << endl << endl;
 
 	for (int y = 0; y < mapHeight; y++) 
 	{
@@ -258,7 +316,7 @@ void startup_routines(void)
 	string path = "maps/level_" + to_string(selectedLevel) + ".map";
 
 	// Give the player values and shit. //
-	global_player = (100, 100, 3);
+	//player = (100, 100, 3);
 
 	load_level(path);
 }
@@ -271,42 +329,7 @@ void quit_routines(void)
 	for (int i = 0; i < mapHeight; i++) { delete[] map[i]; }
 	delete[] map;
 
+	delete player;
+
 	cout << "The depths of the unknown awaits you! Come back soon!" << endl;
 }
-
-class Player {
-public:
-	int max_health = 100;
-	int max_oxygen = 100;
-	int max_lives = 3;
-
-	int current_health;
-	int current_oxygen;
-	int current_lives;
-
-	int pos_x;
-	int pos_y;
-
-	Player(int hp = 100, int ox = 100, int lv = 3) : max_health(hp), max_oxygen(ox), max_lives(lv) {
-		reset();
-	}
-
-	~Player() {
-		//game_over();
-	}
-
-	void reset() {
-		current_health = max_health;
-		current_oxygen = max_oxygen;
-		current_lives = max_lives;
-	}
-
-	void move(int delta_x, int delta_y) {
-		pos_x += delta_x;
-		pos_y += delta_y;
-	}
-
-	void game_over() {
-
-	}
-};
