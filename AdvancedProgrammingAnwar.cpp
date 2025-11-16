@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <vector>
+#include "Player.cpp"
 
 using namespace std;
 
@@ -23,7 +21,7 @@ int mapWidth = 0;
 
 bool selected_map_valid = false;
 
-extern Player global_player;
+Player global_player;
 
 int main(void)
 {
@@ -275,3 +273,40 @@ void quit_routines(void)
 
 	cout << "The depths of the unknown awaits you! Come back soon!" << endl;
 }
+
+class Player {
+public:
+	int max_health = 100;
+	int max_oxygen = 100;
+	int max_lives = 3;
+
+	int current_health;
+	int current_oxygen;
+	int current_lives;
+
+	int pos_x;
+	int pos_y;
+
+	Player(int hp = 100, int ox = 100, int lv = 3) : max_health(hp), max_oxygen(ox), max_lives(lv) {
+		reset();
+	}
+
+	~Player() {
+		//game_over();
+	}
+
+	void reset() {
+		current_health = max_health;
+		current_oxygen = max_oxygen;
+		current_lives = max_lives;
+	}
+
+	void move(int delta_x, int delta_y) {
+		pos_x += delta_x;
+		pos_y += delta_y;
+	}
+
+	void game_over() {
+
+	}
+};
