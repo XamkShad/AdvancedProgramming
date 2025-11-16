@@ -243,8 +243,7 @@ void update_state(char input)
 		map[player->pos_y][player->pos_x] = 'o';
 		map[player->pos_y + target_pos_y][player->pos_x + target_pos_x] = 'P';
 
-		player->pos_y += target_pos_y;
-		player->pos_x += target_pos_x;
+		player->move(target_pos_x, target_pos_y);
 
 		player->current_oxygen--;
 	}
