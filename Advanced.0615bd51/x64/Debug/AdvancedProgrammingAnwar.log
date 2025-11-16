@@ -1,0 +1,6 @@
+﻿  AdvancedProgrammingAnwar.cpp
+C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\AdvancedProgrammingAnwar.cpp(108,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Player.cpp
+  Generating Code...
+AdvancedProgrammingAnwar.obj : error LNK2001: unresolved external symbol "class Player global_player" (?global_player@@3VPlayer@@A)
+C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\x64\Debug\AdvancedProgrammingAnwar.exe : fatal error LNK1120: 1 unresolved externals

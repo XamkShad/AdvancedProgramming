@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\AdvancedProgrammingAnwar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:AdvancedProgrammingAnwar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-16T18:24:01.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdvancedProgrammingAnwar.cpp",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\AdvancedProgrammingAnwar.cpp",
+              "RelativeDocumentMoniker": "AdvancedProgrammingAnwar.cpp",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgrammingAnwar\\AdvancedProgrammingAnwar.cpp",
+              "RelativeToolTip": "AdvancedProgrammingAnwar.cpp",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAAHwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-16T18:21:59.945Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

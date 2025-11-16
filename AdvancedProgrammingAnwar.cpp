@@ -23,18 +23,7 @@ int mapWidth = 0;
 
 bool selected_map_valid = false;
 
-const int MAX_HEALTH = 100;
-const int MAX_OXYGEN = 100;
-const int INIT_LIVES = 3;
-
 extern Player global_player;
-
-int player_pos_y; // Player coordinates. //
-int player_pos_x;
-
-int player_current_health;
-int player_current_oxygen;
-int player_current_lives;
 
 int main(void)
 {
@@ -141,8 +130,8 @@ void load_level(string filepath)
 			// Found the player. Mark it down. If not, abort mission. //
 			if (line[x] == 'P')
 			{
-				player_pos_y = y;
-				player_pos_x = x;
+				global_player.pos_y = y;
+				global_player.pos_x = x;
 
 				selected_map_valid = true;
 			}
@@ -193,15 +182,15 @@ void update_state(char input)
 		break;
 	}
 
-	if (is_valid_coordinate(player_pos_y + target_pos_y, player_pos_x + target_pos_x))
+	if (is_valid_coordinate(global_player.pos_y + target_pos_y, global_player.pos_x + target_pos_x))
 	{
-		map[player_pos_y][player_pos_x] = 'o';
-		map[player_pos_y + target_pos_y][player_pos_x + target_pos_x] = 'P';
+		map[global_player.pos_y][global_player.pos_x] = 'o';
+		map[global_player.pos_y + target_pos_y][global_player.pos_x + target_pos_x] = 'P';
 
-		player_pos_y += target_pos_y;
-		player_pos_x += target_pos_x;
+		global_player.pos_y += target_pos_y;
+		global_player.pos_x += target_pos_x;
 
-		player_current_oxygen--;
+		global_player.current_oxygen--;
 	}
 	// PLAYER INPUT AND COLLISION DETECTION //
 }
@@ -217,9 +206,9 @@ void render_screen(void)
 	cout << "Holy Diver v0.01" << endl; 
 	cout << "Use WASD keys to move. Press 'Q' to quit at all times." << endl << endl;
 
-	cout << "O2 Level: " << player_current_oxygen << "%" << endl;
-	cout << "Hull Integrity: " << player_current_health << "%" << endl;
-	cout << "Lives: " << player_current_lives << endl << endl;
+	cout << "O2 Level: " << global_player.current_oxygen << "%" << endl;
+	cout << "Hull Integrity: " << global_player.current_health << "%" << endl;
+	cout << "Lives: " << global_player.current_lives << endl << endl;
 
 	for (int y = 0; y < mapHeight; y++) 
 	{
@@ -271,9 +260,7 @@ void startup_routines(void)
 	string path = "maps/level_" + to_string(selectedLevel) + ".map";
 
 	// Give the player values and shit. //
-	player_current_oxygen = player_data.oxygen;
-	player_current_health = player_data.health;
-	player_current_lives = player_data.lives;
+	global_player = (100, 100, 3);
 
 	load_level(path);
 }

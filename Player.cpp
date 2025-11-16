@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 
-void game_over();
+//void game_over();
 
-class Player() {
+class Player {
 public:
-	int max_health;
-	int max_oxygen;
-	int max_lives;
+	int max_health = 100;
+	int max_oxygen = 100;
+	int max_lives = 3;
 
 	int current_health;
 	int current_oxygen;
@@ -21,7 +21,7 @@ public:
 	}
 
 	~Player() {
-		game_over();
+		//game_over();
 	}
 
 	void reset() {
@@ -33,6 +33,10 @@ public:
 	void move(int delta_x, int delta_y) {
 		pos_x += delta_x;
 		pos_y += delta_y;
+	}
+
+	void game_over() {
+
 	}
 };
 
