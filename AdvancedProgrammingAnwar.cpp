@@ -1,10 +1,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <random>
 
 using namespace std;
 
-bool is_valid_coordinate(int, int);
 void start_splash_screen(void);
 void startup_routines(void);
 void quit_routines(void);
@@ -14,29 +14,47 @@ int read_input(char*);
 void update_state(char);
 void render_screen(void);
 
+char** loaded_map = nullptr; // The loaded map, this remains untouched for resetting purposes. //
+char** game_map = nullptr; // The game map, this can be overwritten as much as we like. //
+char player_over_char = 'o'; // Let's save the char the player is standing over. By default, the player is standing in oxygen. //
+int mapHeight = 0;
+int mapWidth = 0;
+
+bool selected_map_valid = false;
+
+// RNG Black magic. -ChatGPT //
+mt19937 rng_engine(random_device{}());
+
 #pragma region Classes
-class Map {
-public:
-
-};
-
 class BaseCharacter {
-protected:
+public:
 	int max_health = 100;
 	int damage = 0;
-};
-
-class Player : BaseCharacter {
-public:
-	int max_oxygen = 100;
-	int max_lives = 3;
 
 	int current_health;
-	int current_oxygen;
-	int current_lives;
 
 	int pos_x;
 	int pos_y;
+
+	virtual void move(int delta_x, int delta_y) {
+		pos_x += delta_x;
+		pos_y += delta_y;
+	}
+
+	void take_damage(int dmg) {
+		current_health -= dmg;
+	}
+};
+
+class Player : public BaseCharacter {
+public:
+	int max_oxygen = 100;
+	int max_lives = 3;
+	int max_battery = 100;
+
+	int current_oxygen;
+	int current_battery;
+	int current_lives;
 
 	Player() {
 		reset();
@@ -49,12 +67,8 @@ public:
 	void reset() {
 		current_health = max_health;
 		current_oxygen = max_oxygen;
+		current_battery = max_battery;
 		current_lives = max_lives;
-	}
-
-	void move(int delta_x, int delta_y) {
-		pos_x += delta_x;
-		pos_y += delta_y;
 	}
 
 	void game_over() {
@@ -68,18 +82,66 @@ public:
 };
 
 // Moving enemy. //
-class EnemyAnglerfish : BaseCharacter {
+class EnemyAnglerfish : public BaseCharacter {
 public:
+	float move_chance = 75;
+	int move_sign_chance = 50;
+
+	bool will_move() {
+		uniform_real_distribution<float> dist(0, 100);
+		float rng = dist(rng_engine);
+
+		return move_chance > rng;
+	}
+
+	void move() {
+		uniform_real_distribution<float> dist(0, 100);
+		float rng = dist(rng_engine);
+
+		int delta_x = move_sign_chance > rng ? -1 : 1;
+		int delta_y = move_sign_chance > rng ? 1 : -1;
+
+		pos_x += delta_x;
+		pos_y += delta_y;
+	}
 };
+
+class Map {
+public:
+	EnemyAnglerfish* angler_fish;
+	int fish_count;
+
+	// Construct map with lil fishies. //
+	Map(int count) {
+		fish_count = count;
+		angler_fish = new EnemyAnglerfish[count];
+	}
+
+	// Deconstruct map with lil fishies. //
+	~Map() {
+		delete[] angler_fish;
+	}
+
+	// Check if move is valid. //
+	bool is_valid_coordinate(int y, int x)
+	{
+		return loaded_map[y][x] != 'x';
+	}
+
+	void move_fish() {
+		for (int i = 0; i < fish_count; i++)
+		{
+			if (angler_fish[i].will_move()) {
+				angler_fish[i].move();
+			}
+		}
+	}
+};
+
 #pragma endregion
 
-char** map = nullptr;
-int mapHeight = 0;
-int mapWidth = 0;
-
 Player* player = new Player();
-
-bool selected_map_valid = false;
+Map* map;
 
 int main(void)
 {
@@ -170,10 +232,10 @@ void load_level(string filepath)
 	file.seekg(0);
 
 	// Now, for actually assigning the read characters to the pointer of pointers. //
-	map = new char* [mapHeight];
+	loaded_map = new char* [mapHeight];
 	for (int y = 0; y < mapHeight; y++) 
 	{
-		map[y] = new char[mapWidth];
+		loaded_map[y] = new char[mapWidth];
 	}
 	
 	int y = 0;
@@ -181,7 +243,7 @@ void load_level(string filepath)
 	{
 		for (int x = 0; x < mapWidth; x++)
 		{
-			map[y][x] = line[x];
+			loaded_map[y][x] = line[x];
 
 			// Found the player. Mark it down. If not, abort mission. //
 			if (line[x] == 'P')
@@ -194,7 +256,27 @@ void load_level(string filepath)
 		}
 
 		y++;
+	}	
+
+	// Let's allocate runtime game map. //
+	int angler_fish_count = 0; 
+	game_map = new char* [mapHeight];
+	for (int y = 0; y < mapHeight; y++) 
+	{
+		game_map[y] = new char[mapWidth];
+
+		for (int x = 0; x < mapWidth; x++) 
+		{
+			char index = loaded_map[y][x];
+
+			if (index == 'P') game_map[y][x] = 'P';
+			else if (index == 'x') game_map[y][x] = 'x';
+			else if (index == 'A') angler_fish_count++;
+			else game_map[y][x] = '~';
+		}
 	}
+	
+	map = new Map(angler_fish_count);
 
 	file.close();
 
@@ -238,21 +320,17 @@ void update_state(char input)
 		break;
 	}
 
-	if (is_valid_coordinate(player->pos_y + target_pos_y, player->pos_x + target_pos_x))
+	if (map->is_valid_coordinate(player->pos_y + target_pos_y, player->pos_x + target_pos_x))
 	{
-		map[player->pos_y][player->pos_x] = 'o';
-		map[player->pos_y + target_pos_y][player->pos_x + target_pos_x] = 'P';
+		game_map[player->pos_y + target_pos_y][player->pos_x + target_pos_x] = 'P'; // Update the P position. //
+		game_map[player->pos_y][player->pos_x] = player_over_char; // Set the old position to be the char the player was standing on previously. //
+		player_over_char = loaded_map[player->pos_y][player->pos_x]; // Update the player_over_char for the next move. //
 
 		player->move(target_pos_x, target_pos_y);
 
 		player->current_oxygen--;
 	}
 	// PLAYER INPUT AND COLLISION DETECTION //
-}
-
-bool is_valid_coordinate(int y, int x) 
-{
-	return map[y][x] != 'x';
 }
 
 void render_screen(void)
@@ -262,6 +340,7 @@ void render_screen(void)
 	cout << "Use WASD keys to move. Press 'Q' to quit at all times." << endl << endl;
 
 	cout << "O2 Level: " << player->current_oxygen << "%" << endl;
+	cout << "Battery: " << player->current_battery << "%" << endl;
 	cout << "Hull Integrity: " << player->current_health << "%" << endl;
 	cout << "Lives: " << player->current_lives << endl << endl;
 
@@ -269,7 +348,7 @@ void render_screen(void)
 	{
 		for (int x = 0; x < mapWidth; x++) 
 		{
-			cout << map[y][x];
+			cout << game_map[y][x];
 		}
 
 		cout << endl;
@@ -325,10 +404,15 @@ void quit_routines(void)
 	system("cls");
 
 	// Free the memory and all that pointer black magic. //
-	for (int i = 0; i < mapHeight; i++) { delete[] map[i]; }
-	delete[] map;
+	for (int i = 0; i < mapHeight; i++) { delete[] loaded_map[i]; }
+	delete[] loaded_map;
+
+	for (int i = 0; i < mapHeight; i++) { delete[] game_map[i]; }
+	delete[] game_map;
 
 	delete player;
+
+	delete map;
 
 	cout << "The depths of the unknown awaits you! Come back soon!" << endl;
 }
