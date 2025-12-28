@@ -1,3 +1,7 @@
-﻿  AdvancedProgrammingAnwar.cpp
-C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\AdvancedProgrammingAnwar.cpp(225,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  AdvancedProgrammingAnwar.vcxproj -> C:\Users\anwar\Exodus\XAMK\AdvancedProgrammingAnwar\x64\Debug\AdvancedProgrammingAnwar.exe
+﻿  Character.cpp
+  Enemy.cpp
+  Game.cpp
+  Map.cpp
+  Player.cpp
+  Generating Code...
+  AdvancedProgrammingAnwar.vcxproj -> C:\Users\anwar\Exodus\XAMK\AdvancedProgramming\x64\Debug\AdvancedProgrammingAnwar.exe
