@@ -28,11 +28,14 @@ void Player::handle_input(char input, Map* map) {
 
 	if (map->is_walkable(pos_y + dy, pos_x + dx)) {
 		move(dx, dy);
-		current_oxygen--;
+		update(map);		
 	}
 }
 
-void Player::update(){}
+void Player::update(Map* map){
+	current_oxygen--;
+	map->update(this);
+}
 
 int Player::oxygen() const {
 	return current_oxygen;

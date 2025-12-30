@@ -1,7 +1,6 @@
 #pragma once
 #include "Character.h"
-
-class Map;
+#include "Map.h"
 
 class Player : public BaseCharacter {
 private:
@@ -19,7 +18,7 @@ public:
 
 	void set_position(int x, int y);
 	void handle_input(char input, Map* map);
-	void update() override;
+	void update(Map* map) override;
 
 	int oxygen() const;
 	int battery() const;

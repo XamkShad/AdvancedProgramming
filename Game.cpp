@@ -113,14 +113,16 @@ void Game::process_input() {
 	std::cout << "Awaiting for your orders, Captain: ";
 	std::cin >> input;
 
-	if (input == 'q') running = false; return;
+	if (input == 'q') {
+		running = false;
+		return;
+	}
 
 	player->handle_input(input, map);
 }
 
 void Game::update() {
-	player->update();
-	map->update(player);
+	player->update(map);
 }
 
 void Game::render() {	
@@ -133,5 +135,5 @@ void Game::render() {
 	cout << "Hull Integrity: " << player->health() << "%" << endl;
 	cout << "Lives: " << player->lives() << endl << endl;
 
-	map->render();
+	map->render(player);
 }

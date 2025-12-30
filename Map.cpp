@@ -1,12 +1,13 @@
 #include "Map.h"
 #include "Enemy.h"
+#include "Player.h"
 #include <iostream>
 #include <string>
 #include <fstream>
 
 using namespace std;
 
-Map::Map(const std::string& filepath) : tiles(nullptr), width(0), height(0){
+Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr), fog_of_war_map(nullptr), width(0), height(0){
 	
 	std::ifstream file(filepath);
 
@@ -23,19 +24,32 @@ Map::Map(const std::string& filepath) : tiles(nullptr), width(0), height(0){
 	file.clear();
 	file.seekg(0);
 
-	tiles = new char* [height];
+	original_map = new char* [height];
+	game_map = new char* [height];
+	fog_of_war_map = new char* [height];
 	for (int y = 0; y < height; y++) {
-		tiles[y] = new char[width];
+		original_map[y] = new char[width];
+		game_map[y] = new char[width];
+		fog_of_war_map[y] = new char[width];
 	}
 
 	int y = 0;
 	while (getline(file, line)) {
 		for (int x = 0; x < width; x++) {
-			tiles[y][x] = line[x];
+			original_map[y][x] = line[x];
+			game_map[y][x] = original_map[y][x];
 
 			if (line[x] == 'P') {
 				spawn.player_x = x;
 				spawn.player_y = y;	
+			}
+
+			if (line[x] != 'X') {
+				fog_of_war_map[y][x] = '#';
+				game_map[x][y] = 'O';
+			}
+			else {
+				fog_of_war_map[y][x] = game_map[x][y];
 			}
 		}
 
@@ -44,8 +58,14 @@ Map::Map(const std::string& filepath) : tiles(nullptr), width(0), height(0){
 }
 
 Map::~Map() {
-	for (int i = 0; i < height; i++) delete[] tiles[i];
-	delete[] tiles;
+	for (int i = 0; i < height; i++) delete[] original_map[i];
+	delete[] original_map;
+
+	for (int i = 0; i < height; i++) delete[] game_map[i];
+	delete[] game_map;
+
+	for (int i = 0; i < height; i++) delete[] fog_of_war_map[i];
+	delete[] fog_of_war_map;
 
 	for (int i = 0; i < enemy_count; i++) delete[] enemies[i];
 	delete[] enemies;
@@ -54,21 +74,45 @@ Map::~Map() {
 bool Map::is_walkable(int y, int x) const {
 	if (y < 0 || y >= height || x < 0 || x >= width) return false;
 
-	return tiles[y][x] != 'x';
+	return original_map[y][x] != 'X';
 }
 
 void Map::update(Player* player) {
 	for (int i = 0; i < enemy_count; i++) {
 		enemies[i]->update(this, player);
 	}
+
+	int player_x = player->x();
+	int player_y = player->y();
+
+	for (int dy = -1; dy <= 1; dy++) {
+		for (int dx = -1; dx <= 1; dx++) {
+			int nx = player_x + dx;
+			int ny = player_y + dy;
+
+			if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+
+			fog_of_war_map[ny][nx] = game_map[ny][nx];
+		}		
+	}	
 }
 
-void Map::render() const {
+void Map::render(Player* player) const {
+	int player_row = player->x();
+	int player_column = player->y();
+
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
-			std::cout << tiles[y][x];
+			if (x == player_row && y == player_column) std::cout << 'P';
+			else {
+				std::cout << fog_of_war_map[y][x];
+			}
 		}
 		std::cout << "\n";
 	}
+}
+
+char Map::char_at(int y, int x) const {
+	return game_map[y][x];
 }
 

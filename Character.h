@@ -1,3 +1,4 @@
+#include "Map.h"
 #pragma once
 
 class BaseCharacter {
@@ -9,12 +10,11 @@ protected:
 	int current_health;
 
 	int damage = 0;
-
 public:
 	BaseCharacter();
 	virtual ~BaseCharacter();
 
-	virtual void update() = 0;
+	virtual void update(Map* map) = 0;
 	virtual void move(int delta_x, int delta_y);
 	virtual void take_damage(int dmg);
 

@@ -11,7 +11,9 @@ struct SpawnInfo {
 
 class Map {
 private:
-	char** tiles;
+	char** original_map;
+	char** game_map;
+	char** fog_of_war_map;
 	int width;
 	int height;
 
@@ -25,7 +27,7 @@ public:
 	~Map();
 
 	bool is_walkable(int y, int x) const;
-	char tile_at(int y, int x) const;
+	char char_at(int y, int x) const;
 	void update(Player* player);
-	void render() const;
+	void render(Player* player) const;
 };
