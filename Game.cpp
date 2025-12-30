@@ -116,7 +116,11 @@ void Game::process_input() {
 	std::cout << "Awaiting for your orders, Captain: ";
 	std::cin >> input;
 
-	if (input == 'q') {
+	if (input == 'r' || input == 'R') {
+		// RELOAD GAME HERE //
+	}
+
+	if (input == 'q' || input == 'Q') {
 		running = false;
 		return;
 	}
@@ -140,7 +144,8 @@ void Game::update() {
 void Game::render() {	
 	system("cls"); // Let's make sure we don't "render" over old "frames". //
 	cout << "Holy Diver v1.00" << endl;
-	cout << "Use WASD keys to move. Press 'Q' to quit at all times." << endl << endl;
+	cout << "Use WASD keys to move. G key lights up surrounding area." << endl;
+	cout << "Press R to reload level. Press 'Q' to quit at all times." << endl << endl;
 
 	cout << "O2 Level: " << player->oxygen() << "%" << endl;
 	cout << "Battery: " << player->battery() << "%" << endl;
