@@ -1,3 +1,2 @@
-﻿  Map.cpp
-C:\Users\anwar\Exodus\XAMK\AdvancedProgramming\Map.cpp(20,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  Game.cpp
   AdvancedProgrammingAnwar.vcxproj -> C:\Users\anwar\Exodus\XAMK\AdvancedProgramming\x64\Debug\AdvancedProgrammingAnwar.exe

@@ -24,4 +24,5 @@ public:
 
 	void start();
 	void run();
+	void gameover();
 };

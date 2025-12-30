@@ -17,7 +17,9 @@ Game::~Game() {
 
 	system("cls");
 
-	std::cout << "The depths of the sea will be waiting for you!" << "\n";
+	cout << "GAME OVER" << endl << endl;
+	cout << "You have joined the ever growing army of the drowned..." << endl;
+	cin.ignore();
 }
 
 void Game::start() {
@@ -91,6 +93,7 @@ bool Game::load_level(const std::string& filepath) {
 		map = new Map(filepath);
 		player = new Player();
 		player->set_position(map->spawn.player_x, map->spawn.player_y);
+		map->reveal_tiles(player, 1);
 		render();
 		return true;
 	}
@@ -123,6 +126,15 @@ void Game::process_input() {
 
 void Game::update() {
 	player->update(map);
+	map->update(player);
+
+	if (player->health() <= 0) {
+		player->reset_minus_life(map);
+	}
+
+	if (player->lives() < 0) {
+		gameover();
+	}
 }
 
 void Game::render() {	
@@ -136,4 +148,8 @@ void Game::render() {
 	cout << "Lives: " << player->lives() << endl << endl;
 
 	map->render(player);
+}
+
+void Game::gameover() {
+	running = false;
 }

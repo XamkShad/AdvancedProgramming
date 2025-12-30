@@ -24,17 +24,37 @@ void Player::handle_input(char input, Map* map) {
 	case 's': dy = 1; break;
 	case 'a': dx = -1; break;
 	case 'd': dx = 1; break;
+	case 'g': 
+		current_battery -= 5;
+		map->reveal_tiles(this, 2);
+		update(map);
+		break;
 	}
 
 	if (map->is_walkable(pos_y + dy, pos_x + dx)) {
+		current_oxygen -= 10;
 		move(dx, dy);
 		update(map);		
 	}
 }
 
 void Player::update(Map* map){
-	current_oxygen--;
-	map->update(this);
+	if (current_oxygen <= 0) {
+		current_health -= 10;	
+	}
+	
+	if (current_oxygen <= 0) current_oxygen = 0;
+	if (current_health <= 0) current_health = 0;	
+}
+
+void Player::reset_minus_life(Map* map) {
+	current_lives--;
+
+	current_oxygen = 100;
+	current_battery = 100;
+	current_health = 100;
+
+	set_position(map->spawn.player_x, map->spawn.player_y);
 }
 
 int Player::oxygen() const {

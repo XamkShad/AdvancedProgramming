@@ -19,6 +19,7 @@ public:
 	void set_position(int x, int y);
 	void handle_input(char input, Map* map);
 	void update(Map* map) override;
+	void reset_minus_life(Map* map);
 
 	int oxygen() const;
 	int battery() const;

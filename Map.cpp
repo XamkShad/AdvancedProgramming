@@ -85,16 +85,23 @@ void Map::update(Player* player) {
 	int player_x = player->x();
 	int player_y = player->y();
 
-	for (int dy = -1; dy <= 1; dy++) {
-		for (int dx = -1; dx <= 1; dx++) {
+	fog_of_war_map[player_y][player_x] = game_map[player_y][player_x];
+}
+
+void Map::reveal_tiles(Player* player, int reveal_radius) const{
+	int player_x = player->x();
+	int player_y = player->y();
+
+	for (int dy = -reveal_radius; dy <= reveal_radius; dy++) {
+		for (int dx = -reveal_radius; dx <= reveal_radius; dx++) {
 			int nx = player_x + dx;
 			int ny = player_y + dy;
 
 			if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
 
 			fog_of_war_map[ny][nx] = game_map[ny][nx];
-		}		
-	}	
+		}
+	}
 }
 
 void Map::render(Player* player) const {

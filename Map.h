@@ -29,5 +29,6 @@ public:
 	bool is_walkable(int y, int x) const;
 	char char_at(int y, int x) const;
 	void update(Player* player);
+	void reveal_tiles(Player* player, int reveal_radius) const;
 	void render(Player* player) const;
 };
