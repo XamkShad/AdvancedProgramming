@@ -20,6 +20,8 @@ private:
 	Enemy** enemies;
 	int enemy_count;
 
+	int current_items;
+	int all_map_items;
 public:
 	SpawnInfo spawn;
 
@@ -31,4 +33,8 @@ public:
 	void update(Player* player);
 	void reveal_tiles(Player* player, int reveal_radius) const;
 	void render(Player* player) const;
+
+	int collected_items() const;
+	
+	int hidden_items() const;
 };

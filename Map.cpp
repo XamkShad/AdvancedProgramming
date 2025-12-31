@@ -27,6 +27,7 @@ Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr)
 	original_map = new char* [height];
 	game_map = new char* [height];
 	fog_of_war_map = new char* [height];
+
 	for (int y = 0; y < height; y++) {
 		original_map[y] = new char[width];
 		game_map[y] = new char[width];
@@ -40,20 +41,25 @@ Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr)
 			game_map[y][x] = original_map[y][x];
 
 			if (line[x] == 'P') {
-				spawn.player_x = x;
-				spawn.player_y = y;	
+				game_map[y][x] = '~';
+			}
+			else if (line[x] != '~') {				
+				game_map[y][x] = 'X';
 			}
 
-			if (line[x] != 'X') {
-				fog_of_war_map[y][x] = '#';
-				game_map[x][y] = 'O';
-			}
-			else {
-				fog_of_war_map[y][x] = game_map[x][y];
-			}
+			fog_of_war_map[y][x] = '#';
 		}
 
 		y++;
+	}
+
+	for (int y = 0; y < height; y++) {
+		for (int x = 0; x < width; x++) {
+			if (original_map[y][x] == 'P') {
+				spawn.player_x = x;
+				spawn.player_y = y;
+			}
+		}
 	}
 }
 
@@ -121,5 +127,13 @@ void Map::render(Player* player) const {
 
 char Map::char_at(int y, int x) const {
 	return game_map[y][x];
+}
+
+int Map::collected_items() const {
+	return 0;
+}
+
+int Map::hidden_items() const {
+	return 0;
 }
 

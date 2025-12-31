@@ -31,8 +31,10 @@ void Player::handle_input(char input, Map* map) {
 		break;
 	}
 
+	if (input == 'g') return;
+
 	if (map->is_walkable(pos_y + dy, pos_x + dx)) {
-		current_oxygen -= 10;
+		current_oxygen -= 2;
 		move(dx, dy);
 		update(map);		
 	}

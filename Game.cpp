@@ -6,9 +6,8 @@
 
 using namespace std;
 
-Game::Game() : player(nullptr), map(nullptr), running(true) {
-	player = new Player();
-	map = new Map("maps/level_0.map");
+Game::Game() : player(nullptr), map(nullptr), running(true), score(0) {
+	score = 0;
 }
 
 Game::~Game() {
@@ -92,8 +91,10 @@ bool Game::load_level(const std::string& filepath) {
 	try {
 		map = new Map(filepath);
 		player = new Player();
+
 		player->set_position(map->spawn.player_x, map->spawn.player_y);
 		map->reveal_tiles(player, 1);
+
 		render();
 		return true;
 	}
@@ -151,6 +152,8 @@ void Game::render() {
 	cout << "Battery: " << player->battery() << "%" << endl;
 	cout << "Hull Integrity: " << player->health() << "%" << endl;
 	cout << "Lives: " << player->lives() << endl << endl;
+
+	cout << "Score: " << score << endl << endl;
 
 	map->render(player);
 }

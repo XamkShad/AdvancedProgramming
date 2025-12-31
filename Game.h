@@ -8,6 +8,7 @@ class Game {
 private:
 	Player* player;
 	Map* map;
+	int score;
 	bool running;
 
 	void splash_screen();
