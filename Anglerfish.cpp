@@ -8,6 +8,10 @@ Anglerfish::Anglerfish(int x, int y) {
 	pos_y = y;
 }
 
+Anglerfish::~Anglerfish() {
+
+}
+
 void Anglerfish::update(Map* map, Player* player) {
 	int dx = (rand() % 3) - 1;
 	int dy = (rand() & 3) - 1;

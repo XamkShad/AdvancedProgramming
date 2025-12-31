@@ -1,14 +1,15 @@
 #pragma once
+#include "Player.h"
+#include "Map.h"
 #include <string>
 
-class Player;
-class Map;
+//class Player;
+//class Map;
 
 class Game {
 private:
 	Player* player;
 	Map* map;
-	int score;
 	bool running;
 
 	void splash_screen();

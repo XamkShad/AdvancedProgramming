@@ -13,16 +13,21 @@ private:
 	int max_lives;
 	int current_lives;
 
+	int current_score;
 public:
 	Player();
 
 	void set_position(int x, int y);
 	void handle_input(char input, Map* map);
-	void update(Map* map) override;
+	void update(Map* map, Player* player) override;
+	void take_damage(int dmg) override;
+	void add_score(int amount);
 	void reset_minus_life(Map* map);
+	void reset();
 
 	int oxygen() const;
 	int battery() const;
 	int health() const;
 	int lives() const;
+	int score() const;
 };

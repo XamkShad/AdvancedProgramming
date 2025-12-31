@@ -14,7 +14,7 @@ public:
 	BaseCharacter();
 	virtual ~BaseCharacter();
 
-	virtual void update(Map* map) = 0;
+	virtual void update(Map* map, Player* player) = 0;
 	virtual void move(int delta_x, int delta_y);
 	virtual void take_damage(int dmg);
 

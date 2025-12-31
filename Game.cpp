@@ -6,8 +6,7 @@
 
 using namespace std;
 
-Game::Game() : player(nullptr), map(nullptr), running(true), score(0) {
-	score = 0;
+Game::Game() : player(nullptr), map(nullptr), running(true){
 }
 
 Game::~Game() {
@@ -118,7 +117,8 @@ void Game::process_input() {
 	std::cin >> input;
 
 	if (input == 'r' || input == 'R') {
-		// RELOAD GAME HERE //
+		map->reset(player);
+		return;
 	}
 
 	if (input == 'q' || input == 'Q') {
@@ -130,7 +130,7 @@ void Game::process_input() {
 }
 
 void Game::update() {
-	player->update(map);
+	player->update(map, player);
 	map->update(player);
 
 	if (player->health() <= 0) {
@@ -153,7 +153,8 @@ void Game::render() {
 	cout << "Hull Integrity: " << player->health() << "%" << endl;
 	cout << "Lives: " << player->lives() << endl << endl;
 
-	cout << "Score: " << score << endl << endl;
+	cout << "Score: " << player->score() << endl;
+	cout << "Items: " << map->collected_items() << "/" << map->hidden_items() << endl << endl;
 
 	map->render(player);
 }
