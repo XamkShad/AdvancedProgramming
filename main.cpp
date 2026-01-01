@@ -45,4 +45,18 @@ int main() {
     return 0;
 }
 
-// AI USAGE: 
+// AI USAGE: Yes indeed, I did use AI. I used ChatGPT for //
+// math, that was difficult for me to wrap my head around. //
+// I have commented ChatGPT for the code that is from ChatGPT. //
+
+// What isn't commented, was how separating things was ChatGPTs idea. //
+// Seperating the code into Map.cpp, Game.cpp, etc... //
+// I mean, I would've figured that out at some point, right? :) //
+// I also asked it to explain pointers, I still don't get it 100%. But //
+// oh well. I try not to use code from AI, only ask it to explain concepts. //
+// The math stuff is convenient though. //
+// When I did get serious errors I couldn't figure out the source of, //
+// I just put the error code into ChatGPT and it would explain it. //
+// It would give me a better idea to look for the source. //
+// Other than that, I take full credit. I have been programming a while //
+// in Unity with C#. C++ is sort of like C#'s annoying cousin. :) //
