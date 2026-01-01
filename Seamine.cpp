@@ -11,6 +11,7 @@ Seamine::~Seamine() {
 
 }
 
+// If the player stands over me, K A B O O M //
 void Seamine::update(Map* map, Player* player) {
 	if (player->x() == pos_x && player->y() == pos_y) {
 		player->take_damage(100);

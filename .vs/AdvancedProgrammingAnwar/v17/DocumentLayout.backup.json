@@ -3,52 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Anglerfish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Loot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Loot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_1.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:maps\\level_1.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_0.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -59,8 +15,48 @@
       "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Seamine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Loot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Anglerfish.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0615BD51-E02E-46D9-BCD8-128238DB3069}|AdvancedProgrammingAnwar.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,197 +66,189 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Enemy.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Enemy.h",
-              "RelativeDocumentMoniker": "Enemy.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Enemy.h",
-              "RelativeToolTip": "Enemy.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-31T15:47:01.51Z",
+              "DocumentIndex": 0,
+              "Title": "level_1.map",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_1.map",
+              "RelativeDocumentMoniker": "maps\\level_1.map",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_1.map",
+              "RelativeToolTip": "maps\\level_1.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-01T23:34:00.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Loot.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.h",
-              "RelativeDocumentMoniker": "Loot.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.h",
-              "RelativeToolTip": "Loot.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-31T14:46:14.127Z",
+              "DocumentIndex": 7,
+              "Title": "Character.cpp",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.cpp",
+              "RelativeDocumentMoniker": "Character.cpp",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.cpp",
+              "RelativeToolTip": "Character.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-01T23:31:24.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Item.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Item.h",
-              "RelativeDocumentMoniker": "Item.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Item.h",
-              "RelativeToolTip": "Item.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-31T14:43:06.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Anglerfish.cpp",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp",
-              "RelativeDocumentMoniker": "Anglerfish.cpp",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp",
-              "RelativeToolTip": "Anglerfish.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-31T15:28:15.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Map.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h",
-              "RelativeDocumentMoniker": "Map.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h",
-              "RelativeToolTip": "Map.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAUwBgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-28T19:36:58.762Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.cpp",
               "RelativeToolTip": "Map.cpp",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFwBAAAAAAAAAAAAAFsBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-28T19:39:18.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.cpp",
               "RelativeDocumentMoniker": "Game.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.cpp",
               "RelativeToolTip": "Game.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-28T19:55:13.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Game.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h",
-              "RelativeDocumentMoniker": "Game.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h",
-              "RelativeToolTip": "Game.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-28T19:52:48.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h",
-              "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h",
-              "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAmwBgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-28T18:12:34.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "Character.h",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.h",
               "RelativeDocumentMoniker": "Character.h",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Character.h",
               "RelativeToolTip": "Character.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAmwBAAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAEwA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-28T18:06:58.423Z"
+              "WhenOpened": "2025-12-28T18:06:58.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp",
+              "RelativeDocumentMoniker": "Player.cpp",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp",
+              "RelativeToolTip": "Player.cpp",
+              "ViewState": "AgIAADMAAAAAAAAAAAAEwD4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-28T17:51:51.371Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Anglerfish.cpp",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp",
+              "RelativeDocumentMoniker": "Anglerfish.cpp",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Anglerfish.cpp",
+              "RelativeToolTip": "Anglerfish.cpp",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-31T15:28:15.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Loot.cpp",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.cpp",
               "RelativeDocumentMoniker": "Loot.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Loot.cpp",
               "RelativeToolTip": "Loot.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-31T14:48:14.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp",
-              "RelativeDocumentMoniker": "Player.cpp",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.cpp",
-              "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAFQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-28T17:51:51.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "level_0.map",
-              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_0.map",
-              "RelativeDocumentMoniker": "maps\\level_0.map",
-              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_0.map",
-              "RelativeToolTip": "maps\\level_0.map",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-17T17:50:39.709Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
               "Title": "Seamine.cpp",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Seamine.cpp",
               "RelativeDocumentMoniker": "Seamine.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Seamine.cpp",
               "RelativeToolTip": "Seamine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-31T15:24:33.816Z"
+              "WhenOpened": "2025-12-31T15:24:33.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
+              "Title": "level_0.map",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_0.map",
+              "RelativeDocumentMoniker": "maps\\level_0.map",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\maps\\level_0.map",
+              "RelativeToolTip": "maps\\level_0.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-01T23:10:33.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-28T16:08:36.603Z"
+              "WhenOpened": "2025-12-28T16:08:36.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h",
+              "RelativeDocumentMoniker": "Game.h",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Game.h",
+              "RelativeToolTip": "Game.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-28T19:52:48.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h",
+              "RelativeDocumentMoniker": "Player.h",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Player.h",
+              "RelativeToolTip": "Player.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-28T18:12:34.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Map.h",
+              "DocumentMoniker": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h",
+              "RelativeDocumentMoniker": "Map.h",
+              "ToolTip": "C:\\Users\\anwar\\Exodus\\XAMK\\AdvancedProgramming\\Map.h",
+              "RelativeToolTip": "Map.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAUwBgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-28T19:36:58.762Z",
+              "EditorCaption": ""
             }
           ]
         }

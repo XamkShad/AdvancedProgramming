@@ -1,11 +1,2 @@
-﻿  Anglerfish.cpp
-  Character.cpp
-  Game.cpp
-  Loot.cpp
-  Map.cpp
-C:\Users\anwar\Exodus\XAMK\AdvancedProgramming\Map.cpp(27,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  Player.cpp
-  Seamine.cpp
-  main.cpp
-  Generating Code...
+﻿  Player.cpp
   AdvancedProgrammingAnwar.vcxproj -> C:\Users\anwar\Exodus\XAMK\AdvancedProgramming\x64\Debug\AdvancedProgrammingAnwar.exe

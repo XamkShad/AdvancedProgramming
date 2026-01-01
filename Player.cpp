@@ -10,7 +10,9 @@ Player::Player() :
 	max_health(100),
 	current_health(100),
 	max_lives(3),
-	current_lives(3) { }
+	current_lives(3),
+	current_score(0),
+	current_items(0){ }
 
 // Sets player position. EZ. //
 void Player::set_position(int x, int y) {
@@ -40,7 +42,7 @@ void Player::handle_input(char input, Map* map) {
 
 	// This is if WASD was chosen. //
 	if (map->is_walkable(pos_y + dy, pos_x + dx)) {
-		current_oxygen -= 2;
+		current_oxygen -= 1;
 		move(dx, dy);
 		update(map, this);		
 	}
@@ -63,7 +65,13 @@ void Player::reset_minus_life(Map* map) {
 
 	current_oxygen = 100;
 	current_battery = 100;
-	current_health = 100;
+	current_health = 100;	
+
+	current_score -= 25;
+
+	if (current_score <= 0) {
+		current_score = 0;
+	}
 
 	set_position(map->spawn.player_x, map->spawn.player_y);
 }
@@ -74,11 +82,18 @@ void Player::reset() {
 	current_oxygen = 100;
 	current_battery = 100;
 	current_health = 100;
+
+	current_score = 0;
+	current_items = 0;
 }
 
 // Take damage. Simple come, simple go. //
 void Player::take_damage(int dmg) {
 	current_health -= dmg;
+}
+
+void Player::item_collected() {
+	current_items++;
 }
 
 void Player::add_score(int amount) {
@@ -104,4 +119,8 @@ int Player::lives() const {
 
 int Player::score() const {
 	return current_score;
+}
+
+int Player::items() const {
+	return current_items;
 }

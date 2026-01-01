@@ -62,6 +62,7 @@ Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr)
 		y++;
 	}
 
+	// We go through the map, set the player spawn and count enemies and loot. //
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			char c = original_map[y][x];
@@ -81,12 +82,13 @@ Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr)
 		}
 	}
 
+	// Allocate enemies and items. //
 	enemies = new Enemy* [enemy_count];
 	int enemy_index = 0;
-
 	items = new Item* [item_count];
 	int item_index = 0;
 	
+	// Assign the actual enemies and items to the pointers. //
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			char c = original_map[y][x];
@@ -104,6 +106,9 @@ Map::Map(const std::string& filepath) : original_map(nullptr), game_map(nullptr)
 			}		
 		}
 	}
+
+	// Set the map counter. //
+	all_map_items = item_count;
 }
 
 // Destroy and free everything from the memory in destructor. //
@@ -124,21 +129,27 @@ Map::~Map() {
 	delete[] items;
 }
 
+// This is a simple bool method to check if a tile is walkable. //
+// Parameters, so it can be called conveniently from anywhere. Like Player.cpp //
 bool Map::is_walkable(int y, int x) const {
 	if (y < 0 || y >= height || x < 0 || x >= width) return false;
 
 	return original_map[y][x] != 'X';
 }
 
+// Update the map state and enemies state. //
 void Map::update(Player* player) {
+	// Go through enemies, update their state. //
 	for(int i = 0; i < enemy_count; i++){
 		enemies[i]->update(this, player);
 	}
 
+	// If enemies are dead, delete them. //
 	for (int i = 0; i < enemy_count;) {
 		if (!enemies[i]->is_alive()) {
 			delete enemies[i];
 
+			// This is ChatGPT magic, rolls back the array or something. //
 			for (int j = i; j < enemy_count - 1; j++) {
 				enemies[j] = enemies[j + 1];
 			}
@@ -150,6 +161,8 @@ void Map::update(Player* player) {
 		}
 	}
 
+	// Go through items, if they haven't been collected, //
+	// and if the player is on them, collect them. //
 	for (int i = 0; i < item_count; i++) {
 		if (!items[i]->is_collected() &&
 			items[i]->x() == player->x() && items[i]->y() == player->y()) {
@@ -158,51 +171,90 @@ void Map::update(Player* player) {
 	}
 
 
+	// Update the fog of war map. //
 	int player_x = player->x();
 	int player_y = player->y();
 
 	fog_of_war_map[player_y][player_x] = game_map[player_y][player_x];
 }
 
+// This is mainly for the flashlight, but can be called for anything //
+// Thanks to the reveal radius. //
 void Map::reveal_tiles(Player* player, int reveal_radius) const{
+	// Get the player position. //
 	int player_x = player->x();
 	int player_y = player->y();
 
+	// Loop through the tiles around the player based on reveal radius. //
 	for (int dy = -reveal_radius; dy <= reveal_radius; dy++) {
 		for (int dx = -reveal_radius; dx <= reveal_radius; dx++) {
+			// We have to take the player position into account. //
 			int nx = player_x + dx;
 			int ny = player_y + dy;
 
+			// If the tiles are outside of the array or map, then skip that tile. //
 			if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
 
+			// Let there be light. -Some divine being. //
 			fog_of_war_map[ny][nx] = game_map[ny][nx];
 		}
 	}
 }
 
+// This is were actual rendering happens. //
 void Map::render(Player* player) const {
+
+	// Set local variables for player position. //
 	int player_x = player->x();
 	int player_y = player->y();
 
+	// Loop through the map. This is where the different layers come in handy. //
+	// Prioritization order is 1. Player 2. Items and 3. Enemies. //
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			
+			// Player found, cout 'P' and continue to next tile. //
 			if (x == player_x && y == player_y) {
 				std::cout << 'P';
 				continue;
 			}
 
+			// Item found, cout its sign and continue to next tile. //
+			// So many for-loops here, we need a local bool variable, //
+			// so the continue actually skips to the next map tile, 
+			// and not just next eg. item. //
+			bool item_drawn = false;
 			for (int i = 0; i < item_count; i++) {
+
+				// Is the item not collected? Is it on the current //
+				// map tile we are looping through? //
 				if (!items[i]->is_collected() &&
 					items[i]->x() == x && items[i]->y() == y) {
-					std::cout << items[i]->sign();
+					
+					// Also is the fog cleared on that tile? //
+					if (fog_of_war_map[y][x] != '#') {
+						std::cout << items[i]->sign();
+					}
+					else {
+						std::cout << '#';
+					}
+
+					item_drawn = true;
 					break;
 				}
 			}
 
+			// Item was found, continue. //
+			if (item_drawn) continue;
+
+			// Same deal as the items here. //
 			bool enemy_drawn = false;
 			for (int i = 0; i < enemy_count; i++) {
+				// Is the enemy on the current //
+				// map tile we are looping through? //
 				if (enemies[i]->x() == x && enemies[i]->y() == y) {
+					
+					// Also is the fog cleared on that tile? //
 					if (fog_of_war_map[y][x] != '#') {
 						std::cout << enemies[i]->sign();
 					}
@@ -215,24 +267,30 @@ void Map::render(Player* player) const {
 				}
 			}
 
+			// Enemy was found, so skip to next map tile. //
 			if (enemy_drawn) continue;
 
+			// If none of the previous conditions were met, then just render fog. //
 			std::cout << fog_of_war_map[y][x];
 		}
 		std::cout << "\n";
 	}
 }
 
+// Character or "tile" fetch for enemies and player to check. //
 char Map::char_at(int y, int x) const {
 	return game_map[y][x];
 }
 
+// Reset method. //
 void Map::reset(Player* player) {
 
 	// Reset the game map, using the original map file as a source. //
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
-			char c = original_map[y][x];
+			
+			// Local variable for convenience. //
+			char c = original_map[y][x]; // <- Original map tile! //
 
 			if (c == 'X') {
 				game_map[y][x] = 'X';
@@ -256,7 +314,7 @@ void Map::reset(Player* player) {
 	}
 	enemy_count = 0;
 
-	// Now respawn enemies from original map. //
+	// Now read & respawn enemies from original map. //
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 
@@ -274,6 +332,23 @@ void Map::reset(Player* player) {
 		}
 	}
 
+	// Destroy existing items. //
+	for (int i = 0; i < item_count; i++) {
+		delete items[i];
+	}
+	item_count = 0;
+
+	// Now read & respawn items from original map. //
+	for (int y = 0; y < height; y++) {
+		for (int x = 0; x < width; x++) {
+
+			if(original_map[y][x] == 'L') {
+				items[item_count++] = new Loot(x, y, 50);
+				game_map[y][x] = '~';
+			}
+		}
+	}
+
 	// Let's reset the player. //
 	player->reset();
 	player->set_position(spawn.player_x, spawn.player_y);
@@ -282,11 +357,12 @@ void Map::reset(Player* player) {
 	reveal_tiles(player, 1);
 }
 
+// Methods to check item count from Game.cpp for example. //
 int Map::collected_items() const {
-	return 0;
+	return current_items; // Collected items. //
 }
 
 int Map::hidden_items() const {
-	return 0;
+	return all_map_items; // All map items in the level. //
 }
 

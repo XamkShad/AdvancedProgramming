@@ -13,6 +13,8 @@ Anglerfish::~Anglerfish() {
 }
 
 void Anglerfish::update(Map* map, Player* player) {
+
+	// Move into random directions. Thx ChatGPT. //
 	int dx = (rand() % 3) - 1;
 	int dy = (rand() & 3) - 1;
 
@@ -24,6 +26,7 @@ void Anglerfish::update(Map* map, Player* player) {
 		pos_y = ny;
 	}
 
+	// If the player stands over me, I will take a bite. //
 	if (player->x() == pos_x && player->y() == pos_y) {
 		player->take_damage(25);
 	}

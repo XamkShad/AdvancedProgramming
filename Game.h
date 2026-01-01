@@ -3,17 +3,20 @@
 #include "Map.h"
 #include <string>
 
-//class Player;
-//class Map;
+enum class GameResult {
+	QUIT,
+	REPLAY,
+	NEXT_LEVEL
+};
 
 class Game {
 private:
 	Player* player;
 	Map* map;
 	bool running;
+	std::string level_path;
 
 	void splash_screen();
-	std::string select_level();
 	bool load_level(const std::string& filepath);
 
 	void process_input();
@@ -21,10 +24,11 @@ private:
 	void render();
 
 public:
-	Game();
+	Game(std::string level_path);
 	~Game();
 
 	void start();
-	void run();
-	void gameover();
+	GameResult run();
+	GameResult gameover();
+	GameResult next_level();
 };

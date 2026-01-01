@@ -14,6 +14,7 @@ private:
 	int current_lives;
 
 	int current_score;
+	int current_items;
 public:
 	Player();
 
@@ -21,6 +22,7 @@ public:
 	void handle_input(char input, Map* map);
 	void update(Map* map, Player* player) override;
 	void take_damage(int dmg) override;
+	void item_collected();
 	void add_score(int amount);
 	void reset_minus_life(Map* map);
 	void reset();
@@ -30,4 +32,5 @@ public:
 	int health() const;
 	int lives() const;
 	int score() const;
+	int items() const;
 };
